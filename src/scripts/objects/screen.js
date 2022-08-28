@@ -6,7 +6,7 @@ const screen = {
                             <div class ="data">
                                 <h1>${user.name ?? 'Não possui nome cadastrado 😒'}</h1>                                                               
                                 <p>${user.bio ?? 'Não possui bio cadastrada 😒'}</p> 
-                                <p><img class="people" src="/src/css/images/people-24.svg" alt="social media"> ${user.followers} Followers | ${user.following} Following<p>                               
+                                <p><img class="people" src="./src/css/images/people-24.svg" alt="social media"> ${user.followers} Followers | ${user.following} Following<p>                               
                             </div>
                         </div>
                         `
