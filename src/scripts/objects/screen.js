@@ -29,17 +29,12 @@ const screen = {
                                             </div>`
         } 
              
-        let eventsItens = ''        
-        user.events.forEach(function(event) {
-            const eventType = event.type
-            if (eventType != 'CreateEvent'){
-                eventsItens += `<li><span class="event-name">${event.repo.name}</span> - ${event.payload.commits[0].message} </li>`
-            } else {
-                eventsItens += `<li><span class="event-name">${event.repo.name}</span> - Sem commits - ${event.type} </li>`
-            }
-        })
-                
         if(user.events.length > 0) {
+            let eventsItens = ''        
+            user.events.forEach(function(event) {
+                eventsItens += `<li><span class="event-name">${event.repo.name}</span> - ${event.payload.commits ? event.payload.commits[0].message : 'Sem commit '} </li>`
+            })                    
+            
             this.userProfile.innerHTML += `<div class="events section">
                                                 <h2> Events </h2>
                                                 <ul>${eventsItens}</ul>
@@ -53,5 +48,3 @@ const screen = {
 }
 
 export {screen}
-
-// fork_count - stargazers_count - watchers_count - watchers_count
