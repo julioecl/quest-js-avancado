@@ -39,7 +39,7 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepositories(userName)
     const eventsResponse = await getEvents(userName) 
-    const eventsResponseFilter = eventsResponse.filter(event => event.type == 'CreateEvent' | event.type == 'PushEvent')      
+    const eventsResponseFilter = eventsResponse.filter(event => event.type == 'CreateEvent' || event.type == 'PushEvent')      
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
     user.setEvents(eventsResponseFilter)
